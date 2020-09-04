@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+<link href="https://fonts.googleapis.com/css2?family=Fugaz+One&display=swap" rel="stylesheet">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+<style>
+  .bg-dark {
+    background-color: #4CAF50!important;
+
+}
+
+.navbar-brand{
+  font-family: 'Fugaz One', cursive;
+  font-size : 25px;
+  color : black!important;
+}
+.dropbtn {
+  background-color: #4CAF50;
+  color : black!important;
+  padding: 16px;
+  font-size: 16px;
+  border: none;
+  cursor: pointer;
+  padding-left :20px;
+  right : 100px;
+  border-radius: 4px;
+}
+
+.dropbtn:hover, .dropbtn:focus {
+  background-color: #3e8e41;
+
+}
+
+#myInput {
+  box-sizing: border-box;
+  background-image: url('searchicon.png');
+  background-position: 14px 12px;
+  background-repeat: no-repeat;
+  font-size: 16px;
+  padding: 14px 20px 12px 45px;
+  border: none;
+  border-bottom: 1px solid #ddd;
+}
+
+#myInput:focus {
+  outline: 3px solid #ddd;
+}
+#myInput{
+  padding-left: 10px;
+}
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+left : 18px;
+width: 80%;
+		margin: 0 auto;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f6f6f6;
+  max-width: 219px;
+  max-height: 320px;
+  overflow: auto;
+  border: 1px solid #ddd;
+  z-index: 1;
+
+}
+
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+.head{
+  padding-left :8px;
+padding-top: 60px;
+color: white;
+}
+
+.info{
+  padding-left : 8px;
+  color: white;
+}
+
+.card {
+  box-shadow: 0 4px 8px 0 #228B22;
+  transition: 0.3s;
+  margin : 365 px;
+  padding: 12px;
+  border-radius: 5px; /* 5px rounded corners */
+  padding-right: 6px;
+padding-left :18px;
+background-color: black;
+color: white;
+
+
+
+}
+.container{
+  position : relative;
+  left : -10px;
+padding-left :18px;
+background-color: black;
+}
+
+.middle{
+  position: relative;
+
+}
+.card:hover {
+  box-shadow: 0 8px 16px 0 #228B22;
+}
+body{
+background-color: black;
+}
+.dropdown a:hover {background-color: #ddd;}
+
+.show {display: block;}
+#footer{
+   position:absolute;
+   bottom:0;
+   width:100%!important;
+   height:50px;   /* Height of the footer */
+   background:#4CAF50;
+
+}
+</style>
+</head>
+<body>
+  <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+        <a class="navbar-brand" color="black" href="#">AMAG SOLUTIONS</a>
+          </nav>
+<h2 class="head">NetRate Calculator</h2>
+<p class="info">Click on the button to open the dropdown menu, and use the input field to search for a specific product.</p>
+
+<div class="dropdown" >
+  <button onclick="myFunction()" class="dropbtn"><b>SELECT PRODUCT NAME</b></button>
+<div >
+  <div id="myDropdown" class="dropdown-content">
+  <input type="text" placeholder="Search.." id="myInput" autocomplete="off"
+  autocorrect="off"
+  autocapitalize="none"
+  spellcheck="false" onkeyup="filterFunction()">
+</div>
+  </div>
+  <hr color="#228B22" />
+  <hr color="#228B22"/>
+  <hr color="#228B22"/>
+  <div class="middle">
+
+    <div id="card" class="card" >
+    <div class="container">
+      <p id="card" class ="card">Details Provided:<br/>
+        MRP<br/>
+        PTR<br/>
+        OFFER<br/>
+        NETRATE w/o GST<br/>
+        NETRATE(GST incl.)<br/>
+       </p>
+  </div>
+  </div>
+</div>
+</div>
+
+<script>
+const products =[
+  {
+    Name: "EMITINO INJECTION (5 AMP)",
+    Mrp: 64,
+    Ptr: 45.7,
+    Offer: 25,
+    id:1
+  },
+  {
+    Name: "I-UP INJECTION AMP",
+    Mrp: 204.58,
+    Ptr: 146.13,
+    Offer: 75,
+    id:2
+  },
+  {
+    Name: "LACTOCLAAV INJ 1.2 GM VIALS",
+    Mrp: 124.42,
+    Ptr: 88.87,
+    Offer: 60,
+    id:3
+  },
+  {
+    Name: "LACTOCLAAV INJ 150 MG VIALS",
+    Mrp: 48.35,
+    Ptr: 34.54,
+    Offer: 25,
+    id:4
+  },
+  {
+    Name: "LACTOCLAAV INJ 300 MG VIALS",
+    Mrp: 81,
+    Ptr: 57.86,
+    Offer: 25,
+    id:5
+  },
+  {
+    Name: "LYSOFLAM AQ INJ. AMP",
+    Mrp: 15.68,
+    Ptr: 11.2,
+    Offer: 20,
+    id:6
+  },
+  {
+    Name: "PNZ-40 INJECTION VIAL",
+    Mrp: 48.78,
+    Ptr: 34.84,
+    Offer: 85,
+    id:7
+  },
+  {
+    Name: "TRAXOL INJ.  250 MG VIAL",
+    Mrp: 27.03,
+    Ptr: 19.31,
+    Offer: 60,
+    id:8
+  },
+  {
+    Name: "TRAXOL INJ.  500 MG VIAL",
+    Mrp: 49.39,
+    Ptr: 35.28,
+    Offer: 50,
+    id:9
+  },
+  {
+    Name: "TRAXOL INJ. 1000 MG VIAL",
+    Mrp: 56.43,
+    Ptr: 40.31,
+    Offer: 90,
+    id:10
+  },
+  {
+    Name: "TRAXOL INJ. 125 MG VIAL",
+    Mrp: 25.18,
+    Ptr: 15.92,
+    Offer: 30,
+    id:11
+  },
+  {
+    Name: "TRAXOL S INJ 1500 MG VIAL",
+    Mrp: 157.22,
+    Ptr: 112.3,
+    Offer: 160,
+    id:12
+  },
+  {
+    Name: "TRAXOL S INJ 187.5 MG(KID INJ) VIAL",
+    Mrp: 42.91,
+    Ptr: 30.65,
+    Offer: 30,
+    id:13
+  },
+  {
+    Name: "TRAXOL S INJ 750 MG VIAL",
+    Mrp: 94.89,
+    Ptr: 67.78,
+    Offer: 50,
+    id:14
+  //  ,
+  // {
+  //   Name: "",
+  //   Mrp: ,
+  //   Ptr: ,
+  //   Offer: ,
+  //   id:
+  // }
+  }
+  ];
+  
+
+
+  function myFunction() {
+    document.getElementById("myDropdown").classList.toggle("show");
+  }
+  // body.addEventListener('click', function(){
+  //   const dropdown = document.getElementById("myDropdown")
+  //   if(dropdown.classList.contains("show")){
+  //     dropdown.classList.remove("show");
+  //   }
+  // })
+
+  select = document.getElementById("myDropdown");
+  for (product of products) {
+    select.innerHTML += `<a class="opt" data-id="${product.id}"href=#>${product.Name}</a>`;
+    }
+    
+    
+const options = document.querySelectorAll(".opt");
+let productToRender;
+
+options.forEach(option => option.addEventListener('click', function (){
+      document.getElementById("myDropdown").classList.toggle("show");
+  }));
+  options.forEach(option => option.addEventListener('click', function (e){
+    
+  const currentid = this.dataset.id;
+  console.log(this.dataset)
+  console.log(currentid)
+  productToRender = products.filter(product => product.id == currentid);
+  renderProduct(productToRender[0])
+}));
+
+
+function renderProduct(product){
+  const card = document.querySelector('#card');
+  card.innerHTML = `
+  <div class="container">
+      <p id="card" class ="card"><b>${product.Name}</b><br/>
+        MRP: ₹${product.Mrp}<br/>
+        PTR: ₹${product.Ptr}<br/>
+        OFFER: ${product.Offer}%<br/>
+        NETRATE w/o GST: ₹${((product.Ptr*100)/(product.Offer+100)).toFixed(3)} <br/>
+        GST: ₹${(((product.Ptr*100)*12)/((product.Offer+100)*100)).toFixed(3)} <br/>
+        NETRATE(GST incl.): ₹${((((product.Ptr*100)*12)/((product.Offer+100)*100))+((product.Ptr*100)/(product.Offer+100))).toFixed(3)}<br/>
+       </p>
+  </div>
+  `
+}
+
+// select.add(new Option(product.Name, select.options.length));
+
+
+
+
+
+
+  // $('.lcinj12').click(function(){
+  //   document.getElementById("myDropdown").classList.toggle("show");
+  //   var name = "LACTOCLAAV INJ 1.2 GM VIALS";
+  //   var mrp = "124.42";
+  //   var ptr =
+  //   $('.card').html(`<b>PRODUCT DETAILS<br><b>Product Name: ${name}<br>MRP: ${mrp}<br>PTR: 45.7<br>Offer: 25%<br>NetRate: 36.56<br>GST: 4.11<br>NetRate+GST: 38.39</b>`);
+  //   });
+
+
+
+
+function filterFunction() {
+  var input, filter, ul, li, a, i;
+  input = document.getElementById("myInput");
+  filter = input.value.toUpperCase();
+  div = document.getElementById("myDropdown");
+  a = div.getElementsByTagName("a");
+  for (i = 0; i < a.length; i++) {
+    txtValue = a[i].textContent || a[i].innerText;
+    if (txtValue.toUpperCase().indexOf(filter) > -1) {
+      a[i].style.display = "";
+    } else {  
+      a[i].style.display = "none";
+    }
+  }
+}
+</script>
+<footer class="page-footer font-small blue pt-4" >
+  <div class="footer-copyright text-center py-3" id="footer">© 2020 Copyright:
+    <a href="https://amartyanambiar.github.io/mysite/"><b><u>Amartya Nambiar</u></b></a>&<a href="https://arpancodes.io/knowme/"><b><u>Arpan Abhishek</u></b></a>
+  </div>
+</footer>
+</body>
+</html>
