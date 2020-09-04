@@ -370,12 +370,12 @@ function renderProduct(product){
   card.innerHTML = `
   <div class="container">
       <p id="card" class ="card"><b>${product.Name}</b><br/>
-        MRP: ₹${product.Mrp}<br/>
-        PTR: ₹${product.Ptr}<br/>
-        OFFER: ${product.Offer}%<br/>
-        NETRATE w/o GST: ₹${((product.Ptr*100)/(product.Offer+100)).toFixed(3)} <br/>
-        GST: ₹${(((product.Ptr*100)*12)/((product.Offer+100)*100)).toFixed(3)} <br/>
-        NETRATE(GST incl.): <b>₹${((((product.Ptr*100)*12)/((product.Offer+100)*100))+((product.Ptr*100)/(product.Offer+100))).toFixed(3)}</b><br/>
+        MRP:  ₹${product.Mrp}<br/>
+        PTR:  ₹${product.Ptr}<br/>
+        OFFER:  ${product.Offer}%<br/>
+        NETRATE w/o GST:  ₹${((product.Ptr*100)/(product.Offer+100)).toFixed(3)} <br/>
+        GST:  ₹${(((product.Ptr*100)*12)/((product.Offer+100)*100)).toFixed(3)} <br/>
+        NETRATE(GST incl.):  ₹${((((product.Ptr*100)*12)/((product.Offer+100)*100))+((product.Ptr*100)/(product.Offer+100))).toFixed(3)}<br/>
        </p>
   </div>
   `
