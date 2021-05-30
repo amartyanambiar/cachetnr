@@ -196,7 +196,7 @@ const products =[
     id:2
   },
   {
-    Name: "CACEF 50 DRY SYRUP 30 ML",
+    Name: "CACEF 50 DRY SYRUP",
     Pack: "30ML",
     Mrp:   80.00 ,
     Ptr:   57.14 ,
@@ -229,7 +229,7 @@ const products =[
   },
   {
     Name: "CADBE DROPS 15 ML",
-    Pack: "15 ML",
+    Pack: "",
     Mrp:   40.50 ,
     Ptr:  28.93 ,
     Offer: 0,
@@ -237,14 +237,14 @@ const products =[
   },
   {
     Name: "CADBE SYRUP (FOOD) 200 ML",
-    Pack: "200 ML",
+    Pack: "",
     Mrp:   132.00 ,
     Ptr:   89.49 ,
     Offer: 18,
     id:8
   },
   {
-    Name: "CADBE TABLET  (FOOD) 10'S",
+    Name: "CADBE TABLET  (FOOD)",
     Pack: "10'S",
     Mrp:   79.50 ,
     Ptr:   53.90 ,
@@ -252,7 +252,7 @@ const products =[
     id:9
   },
   {
-    Name: "CAVIT K2 TAB  (FOOD)  10'S",
+    Name: "CAVIT K2 TAB  (FOOD)",
     Pack: "10'S",
     Mrp:   175.30 ,
     Ptr:   118.85 ,
@@ -484,7 +484,7 @@ const products =[
     id:38
   },
   {
-    Name: "LYSOFLAM TABLETS 10'S",
+    Name: "LYSOFLAM TABLETS",
     Pack: "10'S",
     Mrp:   121.00,
     Ptr:   86.43 ,
@@ -501,14 +501,14 @@ const products =[
   },
   {
     Name: "NE POWDER (FOOD) 200 GM",
-    Pack: "200 GM",
+    Pack: "",
     Mrp:   333.00,
     Ptr:   225.76 ,
     Offer: 20,
     id:41
   },
   {
-    Name: "NE-200 CAPSULE 10'S (DRUG)",
+    Name: "NE-200 CAPSULE",
     Pack: "10'S",
     Mrp:   60.00 ,
     Ptr:   42.86 ,
@@ -516,7 +516,7 @@ const products =[
     id:42
   },
   {
-    Name: "NE-400 CAPSULE 10'S",
+    Name: "NE-400 CAPSULE",
     Pack: "10'S",
     Mrp:   103.50 ,
     Ptr:   73.93,
@@ -524,7 +524,7 @@ const products =[
     id:43
   },
   {
-    Name: "NEW CAVIT SUSPENSION 150 ML",
+    Name: "NEW CAVIT SUSPENSION",
     Pack: "150ML",
     Mrp:   119.00 ,
     Ptr:   85.00 ,
@@ -532,7 +532,7 @@ const products =[
     id:44
   },
   {
-    Name: "NEW CAVIT TABLET 15'S",
+    Name: "NEW CAVIT TABLET",
     Pack: "15'S",
     Mrp:   113.00 ,
     Ptr:   80.71 ,
@@ -580,7 +580,7 @@ const products =[
     id:50
   },
   {
-    Name: "PHYTOFLAM-D TABLETS 10'S",
+    Name: "PHYTOFLAM-D TABLETS",
     Pack: "10'S",
     Mrp:   190 ,
     Ptr:   135.71,
@@ -596,7 +596,7 @@ const products =[
     id:52
   },
   {
-    Name: "PNZ 40 TABLET 15'S",
+    Name: "PNZ 40 TABLET",
     Pack: "15'S",
     Mrp:   130.00 ,
     Ptr:   92.86 ,
@@ -612,7 +612,7 @@ const products =[
     id:54
   },
   {
-    Name: "PNZ-D  CAPSULES  15'S",
+    Name: "PNZ-D  CAPSULES",
     Pack: "15'S",
     Mrp:   162.00 ,
     Ptr:   115.71 ,
@@ -724,7 +724,7 @@ const products =[
     id:68
   },
   {
-    Name: "TRAXOF 100 DT 10'S",
+    Name: "TRAXOF 100 DT",
     Pack: "10'S",
     Mrp:   88.00 ,
     Ptr:   62.86 ,
@@ -788,7 +788,7 @@ const products =[
     id:77
   },
   {
-    Name: "TRAXOL-O 100 MG D.T. TABLETS 10'S",
+    Name: "TRAXOL-O 100 MG D.T. TABLETS",
     Pack: "10'S",
     Mrp:   87.00 ,
     Ptr:   62.14 ,
@@ -837,7 +837,7 @@ const products =[
   },
   {
     Name: "VITOC-D DROPS  - 15 ML",
-    Pack: "15 ML",
+    Pack: "",
     Mrp:   87.00 ,
     Ptr:  62.14 ,
     Offer: 11,
@@ -845,7 +845,7 @@ const products =[
   },
   {
     Name: "VITOC-D SACHET 1 GM(Tab)",
-    Pack: "1 GM",
+    Pack: "",
     Mrp:   36.50 ,
     Ptr:   26.07,
     Offer: 11,
@@ -853,14 +853,14 @@ const products =[
   },
   {
     Name: "VITZIN SYRUP 150 ML FOOD (SALE)",
-    Pack: "150 ML",
+    Pack: "",
     Mrp:   125.00 ,
     Ptr:   84.75 ,
     Offer: 20,
     id:86
   },
   {
-    Name: "VITZIN TABLET (FOOD)  10'S",
+    Name: "VITZIN TABLET (FOOD)",
     Pack: "10'S",
     Mrp:   189.00 ,
     Ptr:   128.14 ,
@@ -868,7 +868,7 @@ const products =[
     id:87
   },
   {
-    Name: "X-CAR TAB (FOOD) - 10'S",
+    Name: "X-CAR TAB (FOOD)",
     Pack: "10'S",
     Mrp:   229.55 ,
     Ptr:   155.63 ,
@@ -915,7 +915,7 @@ function renderProduct(product){
   const card = document.querySelector('#card');
   card.innerHTML = `
   <div class="container">
-      <p id="card" class ="card"><b>${product.Name}</b><br/>
+      <p id="card" class ="card"><b>${product.Name}\t${product.Pack}</b><br/>
         MRP:   ₹${product.Mrp}<br/>
         PTR:   ₹${product.Ptr}<br/>
         OFFER:   ${product.Offer}%<br/>
